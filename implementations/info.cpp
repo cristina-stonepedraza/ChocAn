@@ -3,10 +3,13 @@
 using namespace std;
 
 personalInfo::personalInfo(){
-    //
-    cout<<"Wow this was not easy to get setup I had some huge issues";
+    name = new string;
+    street_address = new string;
+    city = new string;
 }
 
 personalInfo::~personalInfo(){
-    //
+    delete name;
+    delete street_address;
+    delete city;
 }
