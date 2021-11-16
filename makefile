@@ -1,2 +1,7 @@
+CFLAGS=-g -Wall
+CC=g++
+BIN=executable
 all:
-	g++ -g -Wall implementations/* main.cpp -l sqlite3
+	$(CC) $(CFLAGS) main.cpp implementations/* -o $(BIN)
+clean:
+	$(RM) $(BIN)

@@ -1,5 +1,4 @@
 #include "../headers/caller.h"
-#include <sqlite3.h>
 
 // m_node class
 

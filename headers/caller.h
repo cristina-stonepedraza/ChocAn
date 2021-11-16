@@ -1,27 +1,19 @@
-#include "member.h"
-#include "provider.h"
+#include "../headers/member.h"
+#include "../headers/provider.h"
 
 
 // Caller class to call other classes
 // Ideally we can have one provider class signed in at a time but we can have multiple providers in the database
-class m_node{
+class m_node: public member{
     public:
-        m_node();
-        ~m_node();
-        void set_next(m_node* data);
-        m_node* get_next();
+        m_node(int id);
     private:
-        member data;
         m_node* next;
 };
-class p_node{
+class p_node: public provider{
     public:
-        p_node();
-        ~p_node();
-        void set_next(p_node* data);
-        p_node* get_next();
+        p_node(int id);
     private:
-        provider data;
         p_node* next;
 };
 
@@ -30,7 +22,9 @@ class caller{
         caller();
         ~caller();
         void menu();
+        void end_week();
     private:
         m_node* member_head;
         p_node* provider_head;
+        int id_counter;//Used when making new id for member or provider
 };
