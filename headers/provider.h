@@ -4,7 +4,7 @@
 class provider: public personalInfo{
     public:
         provider();// 
-        ~provider();
+        //~provider();
         bool authenticate(int providerID, string password);// Logs into the database to see if the supplied provider exists
         bool isLogged();// Returns back whether a user is logged in to ChocAn or not
     private:

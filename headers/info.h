@@ -1,16 +1,20 @@
 #include <string>
-using std::string;
+#include <cctype>
+#include <iostream>
+//using std::string;
+using namespace std;
 
 class personalInfo{
     public:
         personalInfo();
-        ~personalInfo();
-        //
+        //~personalInfo(); // is there a need for a destructor?
+
+        void get_info();
+        
     protected:
-        string* name;
-        string* streetAddress;
-        string* city;
-        char state[3];//For example " OR'\0' "
+        string name;
+        string streetAddress;
+        string city;
+        string state;
         int zipCode;
-        //
 };
