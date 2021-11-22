@@ -9,6 +9,7 @@ using namespace std;
 
 provider::provider(int id){
     // Sets then number of consultations and the total weekly fee to 0
+    is_cached = false;
     weekly_consultations = 0;
     total_fee_weekly = 0;
 
@@ -66,7 +67,7 @@ bool provider::is_match(int id){
 
 void provider::end_week(int week){
     // Write out the final stuff out here and reset the total variables.
-    if(is_cached == false){
+    if(!is_cached){
         return;
     }
 
@@ -74,18 +75,17 @@ void provider::end_week(int week){
     source = "cache/"+to_string(provider_number)+".txt";
     destination = "data/provider/"+to_string(provider_number)+"_"+to_string(week)+".txt";//format example  234567_1.txt
 
-    char c[1000];//Doubt that there will be more than 1000 characters in a single lab
-	ofstream out(destination, ios::app);
+    string s;
+	ofstream out(destination);
 	ifstream in(source);
 
 	while(in && !in.eof()){
-		in.get(c,1000,'\n');
-		in.ignore(100,'\n');
+        getline(in, s);
 		if(!in.eof()){
-			out<<c<<endl;
+			out<<s<<endl;
 		}
 		else{
-			out<<c;
+			out<<s;
 		}
 	}
     
@@ -97,6 +97,7 @@ void provider::end_week(int week){
 
     //Reset is_cached here
     is_cached = false;
+    out.close();
 }
 
 
@@ -118,7 +119,6 @@ void provider::generate_report(string m_name, int m_id, int s_id, int cost, int 
     string current_time;
     time_t now = time(0);
     current_time = ctime(&now);
-    cout<<"********************************CURRENT TIME"<<current_time<<endl;
 
     out<<"SERVICE\n=============\nDate of service: "<<month<<"/"<<day<<"/"<<year<<"\nDate Received: "<<current_time<<"\nMember name: "<<m_name<<"\nMember number: "<<m_id<<"\nService ID number: "<<s_id<<"\nService cost: "<<cost<<"\n\n";
     out.close();

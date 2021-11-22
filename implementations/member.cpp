@@ -8,6 +8,7 @@ using namespace std;
 
 member::member(int id){
     char verify, mem_status;
+    is_cached = false;
     member_number = id;
     do{
         cout<<"Please enter member name:"<<endl;
@@ -96,7 +97,7 @@ int member::generate_report(string provider_name, string service_name, int day, 
         }
     }
     
-    if(is_cached == false){
+    if(!is_cached){
         write_to_file();
         is_cached = true;
     }
@@ -125,22 +126,22 @@ void member::end_week(int week){
     source = "cache/"+to_string(member_number)+".txt";
     destination = "data/member/"+to_string(member_number)+"_"+to_string(week)+".txt";//format example  234567_1.txt
 
-    char c[1000];//Doubt that there will be more than 1000 characters in a single lab
-	ofstream out(destination, ios::app);
+    string s;
+	ofstream out(destination);
 	ifstream in(source);
 
 	while(in && !in.eof()){
-		in.get(c,1000,'\n');
-		in.ignore(100,'\n');
+        getline(in, s);
 		if(!in.eof()){
-			out<<c<<endl;
+			out<<s<<endl;
 		}
 		else{
-			out<<c;
+			out<<s;
 		}
 	}
     //RESET is_cached here
     is_cached = false;
+    out.close();
 }
 
 
