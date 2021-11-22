@@ -1,30 +1,28 @@
 #include "../headers/member.h"
 #include "../headers/provider.h"
-
+#include "../headers/service.h"
 
 // Caller class to call other classes
-// Ideally we can have one provider class signed in at a time but we can have multiple providers in the database
-class m_node: public member{
-    public:
-        m_node(int id);
-    private:
-        m_node* next;
-};
-class p_node: public provider{
-    public:
-        p_node(int id);
-    private:
-        p_node* next;
-};
-
 class caller{
     public:
+        //When calling functions that need id, call them using id_counter++ to increase the id counter.
         caller();
-        ~caller();
+        //~caller();
+        void consult();///////////////
         void menu();
-        void end_week();
+        void end_week();//WHEN ENDING WEEK, iterate through all provider nodes and call the end_week() function for them
+        void new_member(); // Adds a new member and assigns them an id
+        void new_provider();// Adds a new provider and assigns them an id
+        void new_service();// Adds a new service and assigns them an id
+        void login();// Logs into a provider
+        void logout();// Logs out of a provider
+        //void display_member();
+        //void display_provider();
+        //void display_services();
     private:
-        m_node* member_head;
-        p_node* provider_head;
+        provider_list p_data;
+        member_list m_data;
+        service_list s_data;
+
         int id_counter;//Used when making new id for member or provider
 };

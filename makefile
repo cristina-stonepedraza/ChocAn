@@ -4,4 +4,4 @@ BIN=executable
 all:
 	$(CC) $(CFLAGS) main.cpp implementations/* -o $(BIN)
 clean:
-	$(RM) $(BIN)
+	$(RM) $(BIN) cache/* data/member/* data/provider/* *.out
