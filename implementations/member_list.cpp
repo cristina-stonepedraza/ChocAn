@@ -62,8 +62,8 @@ int member_list::generate_report(int id, string provider_name, string service_na
     // By the time this function gets called, the id has already been verified. therefore, we search through and then generate the report for the member that matches
     for(int i=0; i<(int)data.size(); ++i){
         if(data[i].is_match(id) == true){
-            data[i].generate_report(provider_name, service_name, day, month, year);
-            return 0;
+            int x = data[i].generate_report(provider_name, service_name, day, month, year);
+            return x;
         }
     }
     return -1;
