@@ -9,13 +9,13 @@
 3. You can now run the executable by typing in ``./executable``
 4. If you wish to clean up the report and the executable, type in ``make clean``
 
-## Contact info
-Cristina Stone Pedraza
-Tanner Mestas
-David Motorca
-Melissa Nguyen
-Nicole Chen
-Nahom Ketema
+## The ChocAn team
+- Cristina Stone Pedraza
+- Tanner Mestas
+- David Motorca
+- Melissa Nguyen
+- Nicole Chen
+- Nahom Ketema
 
 # License
 [MIT License](LICENSE)
