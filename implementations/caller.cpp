@@ -152,6 +152,7 @@ void caller::consult(){
 void caller::end_week(){
     m_data.end_week();
     p_data.end_week();
+    cout<<"Weekly member reports have been stored at './data/member' and weekly provider reports have been stored at './data/provider'."<<endl;
 }
 
 
