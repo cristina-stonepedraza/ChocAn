@@ -38,7 +38,7 @@ provider::provider(int id){
         }while(tolower(verify)!='y' && tolower(verify)!='n');
 
     }while(tolower(verify) != 'y');
-    cout<<"\nYOUR ACCOUNT HAS BEEN CREATED. YOUR NEW PROVIDER ID IS "<<provider_number<<endl;
+    cout<<"\nYOUR ACCOUNT HAS BEEN CREATED. "<<name<<"'S NEW PROVIDER ID IS "<<provider_number<<endl;
 }
 
 
