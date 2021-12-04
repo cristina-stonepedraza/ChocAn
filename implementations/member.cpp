@@ -49,7 +49,7 @@ member::member(int id){
         }while(tolower(verify)!='y' && tolower(verify)!='n');
 
     }while(tolower(verify) != 'y');
-    cout<<"\nYOUR ACCOUNT HAS BEEN CREATED. YOUR NEW MEMBER ID IS "<<member_number<<endl;
+    cout<<"\nYOUR ACCOUNT HAS BEEN CREATED. "<<name<<"'s MEMBER ID IS "<<member_number<<endl;
 }
 
 
