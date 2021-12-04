@@ -1,7 +1,7 @@
 # ChocAn
 
 ## Introductions
-//
+Chocoholics Anonymous(ChocAn) is a software geared towards recovering chocolate addicts. It gives members unlimited consultations and treatments once they subscribe to ChocAn.
 
 ## Setup Instructions
 1. Once you have downloaded the program run ``make`` in order to generate an executable
@@ -16,6 +16,57 @@
 - Melissa Nguyen
 - Nicole Chen
 - Nahom Ketema
+
+## Known Errors
+> Unfortunately, the team was not able to properly use a Unit Testing frame work, instead, the team decided to use a brute force method
+of entering in values for functions that we deemed neccessary to test. Below is some of the test cases that the team used to test the system. 
+
+Test Case - Proivder Number  Sample Input         Result 
+                                91762077          Validated
+                                12345678910       Invalid Number
+                                123               Invalid Number        
+                                512488612         Invalid Number
+                                -1-245-7-129      Invalid Number
+
+
+Test Case - Member Report   Sample Input            Result
+                            Tanner Mestas           Valid Member Name
+                            Name That Exceeds       Invalid Member Name
+                                25 Characters      
+                            Portland                Valid City Name
+                            97236                   Valid Zip Code
+                            Oregon                  Invalid State Name
+                            OR                      Valid State Name
+
+Test Case - Provider Report     Sample Input        Result
+                                475.00              Valid Service Cost 
+                                2760.00             Invalid Service Cost
+                                This is a test      Invalid Service Cost
+                                123,279.00          Invalid Service Cost
+                                42,269.00           Valid Service Cost
+                                This is test 2      Invalid service cost
+
+### Test Case - Proivder Number
+Sample Input  | Result
+--------------|-------------
+91762077      |  Validated
+12345678910   |  Invalid Number
+123           |  Invalid Number
+512488612     |  Invalid Number
+-1-245-7-129  |  Invalid Number
+
+### Test Case - Member Report
+Sample Input  | Result
+--------------|-------------
+Tanner Mestas |  Valid Member Name
+"Name that exceeds 25 characters" | Invalid Member Name
+
+
+### Test Case - Provider Report
+Sample Input          | Email
+--------------|-------------
+Nahom Ketema  |  nketema1@gmail.com
+
 
 # License
 [MIT License](LICENSE)
