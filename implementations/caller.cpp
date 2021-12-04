@@ -70,6 +70,7 @@ void caller::consult(){
     }
     if(s_data.size() == 0){
         cout<<"There are no services added. Please add a service and try again."<<endl;
+        return;
     }
     if(p_data.login_status() == false){
         cout<<"There is no provider logged in. Please login and try again."<<endl;
